@@ -5,23 +5,24 @@ int k;
 int A[100000];
 
 int p(int x){
-    int result;
+    int i, result = 0;
     for(i = 0; i < n; i++){
         result += A[i] / x;
     }
-    return result <= k;
+    return result < k;
 }
 
 
 int main(){
-    int i, lb, ub;
+    int i, lb, ub, woodSum = 0;;
     scanf("%d%d", &n, &k);
     for(i = 0; i < n; i++){
         scanf("%d", &A[i]);
+        woodSum += A[i];
     }
     
     lb = 0;
-    ub = n;
+    ub = woodSum / k;
     while(ub - lb > 1){
         int m = (lb + ub) / 2;
         if(p(m)){
@@ -32,7 +33,7 @@ int main(){
         }
     }
     
-    printf("%d\n",ub);
+    printf("%d\n",lb);
     
     
     return 0;
