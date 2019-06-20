@@ -22,7 +22,7 @@ int main(){
     }
     
     lb = 0;
-    ub = woodSum / k;
+    ub = woodSum / k + 1;
     while(ub - lb > 1){
         int m = (lb + ub) / 2;
         if(p(m)){
