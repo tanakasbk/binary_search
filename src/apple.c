@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 int n;
 int k;
@@ -8,7 +7,7 @@ int A[100000];
 int p(int x){
     int i, result = 0;
     for(i = 0; i < n; i++){
-        result += ceil((double)A[i] / x);
+        result += (A[i] + x - 1) / x;
     }
     return result <= k;
 }
