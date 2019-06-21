@@ -15,7 +15,7 @@ int p(int x){
 
 int main(){
     int i, lb, ub;
-    long woodSum = 0;;
+    long long woodSum = 0;;
     scanf("%d%d", &n, &k);
     for(i = 0; i < n; i++){
         scanf("%d", &A[i]);
